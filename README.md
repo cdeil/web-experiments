@@ -22,6 +22,7 @@ npm install -g gulp
 │    ├─── index.js
 │    └───
 ├─── build/
+├─── data/
 ├─── fit_dump.py
 ├─── Gulpfile.babel.js
 ├─── index.html
