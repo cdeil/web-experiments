@@ -13,4 +13,4 @@ cols = ['Source_Name', 'RAJ2000', 'DEJ2000', 'GLON', 'GLAT', 'CLASS']
 df = table[cols].to_pandas()
 data = df.to_json()
 
-_dump_json(data, 'data/gll_psch_v08.json')
+_dump_json(data, 'data/data.json')
