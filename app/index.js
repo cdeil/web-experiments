@@ -1,15 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
-import k from '../data/k.js';
-const node = document.createElement('div');
 
-// Create a node to atach the react-dom
+// Create a node to attach the virtual react dom
+// tree to the body
+const node = document.createElement('div');
 node.setAttribute('id', 'node');
 document.body.appendChild(node);
 
 // Render the App
-render(
-  <App/>,
-  node
-);
+render(<App/>, node);
