@@ -11,24 +11,6 @@ npm install -g eslint
 npm install -g gulp
 
 ```
-## Directory Structure
-
-```
-├─── app/
-│    ├─── components/
-│    │    ├─── response/
-│    │    └───
-│    ├─── App.js
-│    ├─── index.js
-│    └───
-├─── build/
-├─── data/
-├─── fit_dump.py
-├─── Gulpfile.babel.js
-├─── index.html
-└─── README.md
-
-```
 
 ## Installation
 
@@ -49,3 +31,41 @@ To bundle the web app
 1. run `gulp bundle`, to bundle the app into build folder
 2. Either serve `build` folder locally.
 3. Or deploy it to gh-pages by running `gulp deploy`.
+
+
+
+### Directory Structure
+
+```
+├─── .publish
+├─── app/
+│    ├─── components/
+│    │    ├─── response/
+│    │    └───
+│    ├─── App.js
+│    ├─── index.js
+│    └───
+├─── build/
+├─── data/
+├─── fit_dump.py
+├─── Gulpfile.babel.js
+├─── index.html
+└─── README.md
+
+```
+
+## .publish
+
+This directory is used by gh-pages plugin to temporarily store data and publish to gh-pages branch of github.
+
+## app
+
+This is where the entire application logic resides.
+
+## build
+
+This directory contains the minfied source code for production deployment.
+
+## data
+
+This is where JSON files will be stored for reading.
