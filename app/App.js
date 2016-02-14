@@ -11,21 +11,31 @@ export default class App extends Component {
     super();
     this.state = {
       catalog: null,
-      sourceName: null,
+      sourceName: 0,
     };
+    this.sourceNameChange = this.sourceNameChange.bind(this);
     this.data = JSON.parse(gll);
     console.log(this.data);
     this.catalog = '2fhl';
+  }
+  sourceNameChange(e) {
+    console.log('changed');
+    this.setState({
+      sourceName: e.target.value,
+    });
   }
   render() {
     return (
       <div className="app">
         <Navbar/>
         <Col md={2} className="sidebar">
-          <LeftPane catalog={this.catalog} data={this.data}/>
+          <LeftPane catalog={this.catalog}
+            data={this.data}
+            sourceNameChange={this.sourceNameChange}
+          />
         </Col>
         <Col md={8} mdOffset={3}>
-          <Content/>
+          <Content sourceName={this.state.sourceName} data={this.data}/>
         </Col>
       </div>
     );
