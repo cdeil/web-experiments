@@ -1,3 +1,6 @@
+"""
+Dump FITS format data to JSON format for display on website.
+"""
 import json
 import click
 from astropy.table import Table
