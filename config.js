@@ -24,6 +24,7 @@ System.config({
     "react": "npm:react@0.14.7",
     "react-bootstrap": "npm:react-bootstrap@0.28.3",
     "react-dom": "npm:react-dom@0.14.7",
+    "react-select": "npm:react-select@1.0.0-beta9",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -167,6 +168,9 @@ System.config({
     "npm:react-dom@0.14.7": {
       "react": "npm:react@0.14.7"
     },
+    "npm:react-input-autosize@0.6.8": {
+      "react": "npm:react@0.14.7"
+    },
     "npm:react-overlays@0.6.0": {
       "classnames": "npm:classnames@2.2.3",
       "dom-helpers": "npm:dom-helpers@2.4.0",
@@ -180,6 +184,12 @@ System.config({
     },
     "npm:react-prop-types@0.3.0": {
       "warning": "npm:warning@2.1.0"
+    },
+    "npm:react-select@1.0.0-beta9": {
+      "classnames": "npm:classnames@2.2.3",
+      "react": "npm:react@0.14.7",
+      "react-dom": "npm:react-dom@0.14.7",
+      "react-input-autosize": "npm:react-input-autosize@0.6.8"
     },
     "npm:react@0.14.7": {
       "fbjs": "npm:fbjs@0.6.1",

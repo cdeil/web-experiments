@@ -5,13 +5,14 @@ import { Col } from 'react-bootstrap';
 import Navbar from './components/Navbar';
 import LeftPane from './components/LeftPane';
 import Content from './components/Content';
+import Footer from './components/Footer';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       catalog: null,
-      sourceName: 0,
+      sourceName: null,
     };
     this.sourceNameChange = this.sourceNameChange.bind(this);
     this.data = JSON.parse(gll);
@@ -19,9 +20,9 @@ export default class App extends Component {
     this.catalog = '2fhl';
   }
   sourceNameChange(e) {
-    console.log('changed');
+    console.log('changed',e);
     this.setState({
-      sourceName: e.target.value,
+      sourceName: e,
     });
   }
   render() {
@@ -31,12 +32,14 @@ export default class App extends Component {
         <Col md={2} className="sidebar">
           <LeftPane catalog={this.catalog}
             data={this.data}
+            sourceName={this.state.sourceName}
             sourceNameChange={this.sourceNameChange}
           />
         </Col>
         <Col md={8} mdOffset={3}>
           <Content sourceName={this.state.sourceName} data={this.data}/>
         </Col>
+        <Footer/>
       </div>
     );
   }
