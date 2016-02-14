@@ -38,8 +38,11 @@ To run locally for development.
 
 ## Running
 
-1. Start a local server, e.g. `python -m SimpleHTTPServer`
-2. Incase you want auto reload install live-server  `npm install -g live-server` and run `live-server ./`
+1. If you want to run the app locally and debug or test it. It is advisable to serve the index.html found in the root of your project.
+2. The build directory is a compressed and uglified version of the app to be used for production deployment of the app for fast network performances.
+3. Serve the app by running a local server, e.g. `python -m SimpleHTTPServer`
+4. Incase you want auto reload install live-server  `npm install -g live-server` and run `live-server ./`
+
 
 ## Deploying
 
