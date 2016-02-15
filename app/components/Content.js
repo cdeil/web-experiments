@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 
 export default (props) => {
   if (!props.sourceName) return <div/>;
+
   const rows = Object.keys(props.data).map((item, key) => {
     return (
       <tr key={key}>
