@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import gll from '../data/data.json!json';
-// import './app.css!css';
 import { Col } from 'react-bootstrap';
+
 import Navbar from './components/Navbar';
 import LeftPane from './components/LeftPane';
 import Content from './components/Content';
 import Footer from './components/Footer';
+
+import gll from '../data/data.json!json';
 
 export default class App extends Component {
   constructor() {
@@ -14,13 +15,18 @@ export default class App extends Component {
       catalog: null,
       sourceName: null,
     };
+    // Need to manually bind `this` in ES6 class methods
     this.sourceNameChange = this.sourceNameChange.bind(this);
+
     this.data = JSON.parse(gll);
-    console.log(this.data);
+
+    // If more catalogs, we can have a dynamic array
     this.catalog = '2fhl';
   }
+  /**
+   * Changes sourceName state whenever called
+   */
   sourceNameChange(e) {
-    console.log('changed',e);
     this.setState({
       sourceName: e,
     });
