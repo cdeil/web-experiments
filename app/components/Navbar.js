@@ -8,7 +8,7 @@ const style = {
 
 export default () => {
   return (
-    <Navbar inverse style={style}>
+    <Navbar inverse style={style} className="navbar-fixed-top">
       <Navbar.Header>
         <Navbar.Brand>
           <a href="#">Gammapy Catalog Browser</a>
