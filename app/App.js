@@ -20,7 +20,6 @@ export default class App extends Component {
     this.catalog = '2fhl';
   }
   sourceNameChange(e) {
-    console.log('changed',e);
     this.setState({
       sourceName: e,
     });
@@ -29,16 +28,18 @@ export default class App extends Component {
     return (
       <div className="app">
         <Navbar/>
-        <Col md={2} className="sidebar">
-          <LeftPane catalog={this.catalog}
-            data={this.data}
-            sourceName={this.state.sourceName}
-            sourceNameChange={this.sourceNameChange}
-          />
-        </Col>
-        <Col md={8} mdOffset={3}>
-          <Content sourceName={this.state.sourceName} data={this.data}/>
-        </Col>
+        <div style={{ marginTop: '80px' }}>
+          <Col md={2} className="sidebar">
+            <LeftPane catalog={this.catalog}
+              data={this.data}
+              sourceName={this.state.sourceName}
+              sourceNameChange={this.sourceNameChange}
+            />
+          </Col>
+          <Col md={8} mdOffset={3}>
+            <Content sourceName={this.state.sourceName} data={this.data}/>
+          </Col>
+        </div>
         <Footer/>
       </div>
     );
