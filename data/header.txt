@@ -1,0 +1,31 @@
+XTENSION= 'IMAGE   '           / Image extension
+BITPIX  =                  -32 / array data type
+NAXIS   =                    2 / number of array dimensions
+NAXIS1  =                10001
+NAXIS2  =                  401
+PCOUNT  =                    0 / number of parameters
+GCOUNT  =                    1 / number of groups
+COMMENT   FITS (Flexible Image Transport System) format is defined in 'Astronomy
+COMMENT   and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H
+EXTNAME = 'SIGNIFICANCE'
+HDUNAME = 'Significance'
+CTYPE1  = 'GLON-CAR'           / Type of co-ordinate on axis 1
+CTYPE2  = 'GLAT-CAR'           / Type of co-ordinate on axis 2
+RADESYS = '        '           / Reference frame for RA/DEC values
+EQUINOX =                2000. / [yr] Epoch of reference equinox
+CRPIX1  =                5001. / Reference pixel on axis 1
+CRPIX2  =                 201. / Reference pixel on axis 2
+CRVAL1  =                 340. / Value at ref. pixel on axis 1
+CRVAL2  =                   0. / Value at ref. pixel on axis 2
+CDELT1  =  -0.0199966430664062 / Pixel size on axis 1
+CDELT2  =   0.0199997425079346 / Pixel size on axis 2
+CUNIT1  = 'deg     '           / units of  CRVAL1 and  CDELT1
+CUNIT2  = 'deg     '           / units of  CRVAL2 and  CDELT2
+BUNIT   = 'Count   '
+TELESCOP= 'H.E.S.S.'           / name of telescope
+ORIGIN  = 'The H.E.S.S. Collaboration' / organization responsible for the data
+CREATOR = 'HESS Plotters::FITSTools $Revision: 1.23 $' / software configuration
+OBJECT  = 'ra251.743590 dec-45.246224' / name of observed object
+DATE    = '2010-10-10T01:43:11' / file creation date (YYYY-MM-DDThh:mm:ss UT)
+HISTORY Created by klages with FITSTools.C $Revision: 1.23 $  on 2010-10-10T01:4
+END
