@@ -6,7 +6,7 @@ const style = {
   borderRadius: '0px',
 };
 
-export default () => {
+export default (props) => {
   return (
     <Navbar inverse style={style} className="navbar-fixed-top">
       <Navbar.Header>
@@ -16,8 +16,8 @@ export default () => {
       </Navbar.Header>
     <Nav pullRight>
       <NavItem eventKey={3}>About</NavItem>
-      <NavItem eventKey={4}>Catalog</NavItem>
-      <NavItem eventKey={5}>Image</NavItem>
+      <NavItem eventKey={4} href="#" onClick={() => props.setRoute('')}>Catalog</NavItem>
+      <NavItem eventKey={5} href="#image" onClick={() => props.setRoute('image')}>Image</NavItem>
       <NavItem eventKey={6}>Source</NavItem>
     </Nav>
   </Navbar>

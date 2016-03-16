@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
+import 'leaflet/dist/leaflet.css!css';
 import './style/reset.css!css';
 import './style/app.css!css';
 import './style/react-select.min.css!css';
