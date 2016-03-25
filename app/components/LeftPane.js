@@ -10,7 +10,7 @@ export default (props) => {
       label: sourceName[e],
     };
   });
-
+  // console.log(props.sourceName && props.sourceName.value);
   return (
     <div>
       <Input type="select" label="Catalog">

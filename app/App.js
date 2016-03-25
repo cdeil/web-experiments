@@ -9,14 +9,39 @@ import ImageView from './components/ImageView';
 
 import gll from '../data/data.json!json';
 
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  url = url.toLowerCase(); // This is just to avoid case sensitiveness
+  name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function updateQueryStringParameter(uri, key, value) {
+  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+  if (uri.match(re)) {
+    return uri.replace(re, '$1' + key + "=" + value + '$2');
+  }
+  else {
+    return uri + separator + key + "=" + value;
+  }
+}
+
 export default class App extends Component {
 
   constructor() {
     super();
+    const cat = getParameterByName('cat');
+    const source = getParameterByName('source');
+
     this.state = {
       route: window.location.hash.substr(1) || null,
-      catalog: null,
-      sourceName: null,
+      catalog: cat,
+      sourceName: source ? { value: source } : null,
     };
 
     // Need to manually bind `this` in ES6 class methods
@@ -40,6 +65,12 @@ export default class App extends Component {
    * Changes sourceName state whenever called
    */
   sourceNameChange(e) {
+    const cat = e.label.slice(0, e.label.indexOf(' '));
+    console.log(cat);
+    const source = e.value;
+    let newURI = updateQueryStringParameter(window.location.href, 'cat', cat);
+    newURI = updateQueryStringParameter(newURI, 'source', source);
+    window.history.pushState({ path: newURI }, '', newURI);
     this.setState({
       sourceName: e,
     });
@@ -48,7 +79,6 @@ export default class App extends Component {
   // This is the router which decides on how to
   // route the application logic depending on the URL.
   router() {
-    console.log(this.state.route);
 
     switch (this.state.route) {
       case 'image':
